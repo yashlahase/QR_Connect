@@ -40,6 +40,7 @@ const MyQRScreen = ({ userProfile, isDarkMode }) => {
       </View>
     </SafeAreaView>
   );
+
 };
 
 export default MyQRScreen;
