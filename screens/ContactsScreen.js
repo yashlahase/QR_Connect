@@ -1,5 +1,6 @@
 import React, { useState, useMemo, useCallback } from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import ContactItem from '../components/ContactItem';
 
 const ContactsScreen = ({ contacts, isDarkMode, onSelectContact }) => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -14,5 +15,22 @@ const ContactsScreen = ({ contacts, isDarkMode, onSelectContact }) => {
     );
   }, [contacts, searchQuery]);
 
-  
+    const handleSearchChange = useCallback((text) => {
+    setSearchQuery(text);
+  }, []);
+
+  const handleContactPress = useCallback(
+    (contact) => {
+      onSelectContact(contact);
+    },
+    [onSelectContact]
+  );
+
+  const renderContactItem = useCallback(
+    ({ item }) => (
+      <ContactItem item={item} isDarkMode={isDarkMode} onPress={handleContactPress} />
+    ),
+    [isDarkMode, handleContactPress]
+  );
+
 }
