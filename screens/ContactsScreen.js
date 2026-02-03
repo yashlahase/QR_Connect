@@ -13,4 +13,6 @@ const ContactsScreen = ({ contacts, isDarkMode, onSelectContact }) => {
         contact.email.toLowerCase().includes(lower)
     );
   }, [contacts, searchQuery]);
+
+  
 }
