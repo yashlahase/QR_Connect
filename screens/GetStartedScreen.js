@@ -1,7 +1,7 @@
 import React from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { View, Text, Pressable } from 'react-native';
-
+import { styles } from '../styles';
 
 const GetStartedScreen = ({ isDarkMode, onGetStarted }) => (
   <SafeAreaView style={[styles.container, isDarkMode && styles.darkContainer]}>
