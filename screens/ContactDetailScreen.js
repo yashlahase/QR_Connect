@@ -6,7 +6,7 @@ import {
   Text,
   TouchableOpacity,
   Alert,
-  
+  Linking,
   Clipboard,
 } from 'react-native';
 
@@ -32,6 +32,29 @@ const copyToClipboard = (text, label) => {
         },
       ]
     );
+  };
+
+    const openInstagram = async (instagramHandle) => {
+    try {
+      let handle = instagramHandle.replace('@', '');
+      const appUrl = `instagram://user?username=${handle}`;
+      const canOpenApp = await Linking.canOpenURL(appUrl);
+
+      if (canOpenApp) {
+        await Linking.openURL(appUrl);
+      } else {
+        const webUrl = `https://instagram.com/${handle}`;
+        await Linking.openURL(webUrl);
+      }
+    } catch (error) {
+      try {
+        let handle = instagramHandle.replace('@', '');
+        const webUrl = `https://instagram.com/${handle}`;
+        await Linking.openURL(webUrl);
+      } catch (webError) {
+        Alert.alert('Error', 'Failed to open Instagram profile');
+      }
+    }
   };
 
 }
