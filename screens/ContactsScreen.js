@@ -53,9 +53,36 @@ const ContactsScreen = ({ contacts, isDarkMode, onSelectContact }) => {
           returnKeyType="search"
           clearButtonMode="while-editing"
         />
-        </View>
+                {filteredContacts.length === 0 ? (
+          <View style={styles.emptyContainer}>
+            <Text style={[styles.emptyText, isDarkMode && styles.darkSubtext]}>
+              {contacts.length === 0
+                ? 'No contacts found'
+                : 'No matching contacts'}
+            </Text>
+            <Text style={[styles.emptySubtext, isDarkMode && styles.darkSubtext]}>
+              {contacts.length === 0
+                ? 'Scan QR codes to add contacts'
+                : 'Try a different search term'}
+            </Text>
+          </View>
+        ) : (
+          <FlatList
+            data={filteredContacts}
+            keyExtractor={(item) => item.id}
+            renderItem={renderContactItem}
+            showsVerticalScrollIndicator={false}
+            keyboardShouldPersistTaps="handled"
+            removeClippedSubviews={true}
+            maxToRenderPerBatch={10}
+            windowSize={10}
+            initialNumToRender={10}
+            getItemLayout={null}
+          />
+        )}
+      </View>
     </SafeAreaView>
-    )
-}
+  );
+};
 
 export default React.memo(ContactsScreen);
