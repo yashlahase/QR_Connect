@@ -90,5 +90,21 @@ const copyToClipboard = (text, label) => {
     }
   };
 
+
+  const openPhone = async (phoneNumber) => {
+    try {
+      const phoneUrl = `tel:${phoneNumber}`;
+      const canOpen = await Linking.canOpenURL(phoneUrl);
+
+      if (canOpen) {
+        await Linking.openURL(phoneUrl);
+      } else {
+        Alert.alert('Error', 'Cannot open phone dialer');
+      }
+    } catch (error) {
+      Alert.alert('Error', 'Failed to open phone dialer');
+    }
+  };
+
 }
 
