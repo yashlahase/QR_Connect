@@ -34,4 +34,31 @@ const ProfileScreen = ({
 
     return true;
   };
+
+    const cleanPhoneNumber = (phone) => {
+    let cleaned = '';
+    for (let i = 0; i < phone.length; i++) {
+      const char = phone[i];
+      if (char === ' ' || char === '-' || char === '(' || char === ')') {
+        continue;
+      }
+      cleaned += char;
+    }
+    return cleaned;
+  };
+
+  const isValidPhone = (phone) => {
+    const cleanPhone = cleanPhoneNumber(phone);
+    if (cleanPhone.length < 10) return false;
+    if (cleanPhone.length > 15) return false;
+
+    for (let i = 0; i < cleanPhone.length; i++) {
+      const char = cleanPhone[i];
+      if (i === 0 && char === '+') continue;
+      if (char < '0' || char > '9') return false;
+    }
+
+    return true;
+  };
+
 }
