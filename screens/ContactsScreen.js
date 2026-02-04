@@ -53,7 +53,8 @@ const ContactsScreen = ({ contacts, isDarkMode, onSelectContact }) => {
           returnKeyType="search"
           clearButtonMode="while-editing"
         />
-                {filteredContacts.length === 0 ? (
+                
+          {filteredContacts.length === 0 ? (
           <View style={styles.emptyContainer}>
             <Text style={[styles.emptyText, isDarkMode && styles.darkSubtext]}>
               {contacts.length === 0
