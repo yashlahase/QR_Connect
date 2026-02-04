@@ -75,5 +75,20 @@ const copyToClipboard = (text, label) => {
     }
   };
 
+    const openEmail = async (emailAddress) => {
+    try {
+      const emailUrl = `mailto:${emailAddress}`;
+      const canOpen = await Linking.canOpenURL(emailUrl);
+
+      if (canOpen) {
+        await Linking.openURL(emailUrl);
+      } else {
+        Alert.alert('Error', 'Cannot open email app');
+      }
+    } catch (error) {
+      Alert.alert('Error', 'Failed to open email app');
+    }
+  };
+
 }
 
