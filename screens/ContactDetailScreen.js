@@ -145,5 +145,40 @@ const copyToClipboard = (text, label) => {
     },
   ].filter((item) => item.value);
 
+    return (
+    <SafeAreaView style={[styles.container, isDarkMode && styles.darkContainer]}>
+      <ScrollView
+        style={styles.contactDetailContainer}
+        showsVerticalScrollIndicator={false}
+      >
+        <View style={styles.contactDetailHeader}>
+          <TouchableOpacity
+            style={[styles.backButton, isDarkMode && styles.darkBackButton]}
+            onPress={onBack}
+          >
+            <Text
+              style={[
+                styles.backButtonText,
+                isDarkMode && styles.darkBackButtonText,
+              ]}
+            >
+              ←
+            </Text>
+          </TouchableOpacity>
+          <Text
+            style={[
+              styles.screenTitle,
+              isDarkMode && styles.darkText,
+              { flex: 1, textAlign: 'center', marginVertical: 0 },
+            ]}
+          >
+            Contact Details
+          </Text>
+          <View style={{ width: 40 }} />
+        </View>
+    
+        </ScrollView>
+        </SafeAreaView>
+    )
 }
 
