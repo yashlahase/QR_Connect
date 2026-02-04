@@ -57,5 +57,23 @@ const copyToClipboard = (text, label) => {
     }
   };
 
+    const openLinkedIn = async (linkedinUrl) => {
+    try {
+      let url = linkedinUrl;
+      if (!url.startsWith('http://') && !url.startsWith('https://')) {
+        url = 'https://' + url;
+      }
+
+      const canOpen = await Linking.canOpenURL(url);
+      if (canOpen) {
+        await Linking.openURL(url);
+      } else {
+        Alert.alert('Error', 'Cannot open LinkedIn profile');
+      }
+    } catch (error) {
+      Alert.alert('Error', 'Failed to open LinkedIn profile');
+    }
+  };
+
 }
 
