@@ -106,5 +106,44 @@ const copyToClipboard = (text, label) => {
     }
   };
 
+    const contactInfoItems = [
+    {
+      icon: '📞',
+      label: 'Phone',
+      value: contact.phone,
+      displayValue: contact.phone,
+      action: () => openPhone(contact.phone),
+      onLongPress: () =>
+        copyToClipboard(contact.phone, 'Phone number'),
+    },
+    {
+      icon: '✉️',
+      label: 'Email',
+      value: contact.email,
+      displayValue: contact.email,
+      action: () => openEmail(contact.email),
+      onLongPress: () =>
+        copyToClipboard(contact.email, 'Email address'),
+    },
+    {
+      icon: '💼',
+      label: 'LinkedIn',
+      value: contact.linkedin,
+      displayValue: getLinkedInUsername(contact.linkedin),
+      action: () => openLinkedIn(contact.linkedin),
+      onLongPress: () =>
+        copyToClipboard(contact.linkedin, 'LinkedIn profile'),
+    },
+    {
+      icon: '📷',
+      label: 'Instagram',
+      value: contact.instagram,
+      displayValue: contact.instagram,
+      action: () => openInstagram(contact.instagram),
+      onLongPress: () =>
+        copyToClipboard(contact.instagram, 'Instagram handle'),
+    },
+  ].filter((item) => item.value);
+
 }
 
