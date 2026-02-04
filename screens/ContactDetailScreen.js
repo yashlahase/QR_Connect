@@ -176,9 +176,94 @@ const copyToClipboard = (text, label) => {
           </Text>
           <View style={{ width: 40 }} />
         </View>
-    
-        </ScrollView>
-        </SafeAreaView>
-    )
-}
 
+
+        <View style={[styles.contactCard, isDarkMode && styles.darkContactCard]}>
+          <View
+            style={[
+              styles.contactCardHeader,
+              isDarkMode && styles.darkContactCardHeader,
+            ]}
+          >
+            <View style={styles.contactDetailAvatar}>
+              <Text style={styles.contactDetailAvatarText}>
+                {contact.name.charAt(0).toUpperCase()}
+              </Text>
+            </View>
+            <Text
+              style={[
+                styles.contactDetailName,
+                isDarkMode && styles.darkContactDetailName,
+              ]}
+            >
+              {contact.name}
+            </Text>
+            <Text
+              style={[
+                styles.contactDetailRole,
+                isDarkMode && styles.darkContactDetailRole,
+              ]}
+            >
+              Contact
+            </Text>
+          </View>
+
+          <View style={styles.contactInfoSection}>
+            {contactInfoItems.map((item, index) => (
+              <TouchableOpacity
+                key={index}
+                style={[
+                  styles.contactInfoItem,
+                  isDarkMode && styles.darkContactInfoItem,
+                  index === contactInfoItems.length - 1 && {
+                    borderBottomWidth: 0,
+                  },
+                ]}
+                onPress={item.action}
+                onLongPress={item.onLongPress}
+                activeOpacity={0.7}
+              >
+                <View
+                  style={[
+                    styles.contactInfoIcon,
+                    isDarkMode && styles.darkContactInfoIcon,
+                  ]}
+                >
+                  <Text style={styles.contactInfoIconText}>{item.icon}</Text>
+                </View>
+                <View style={styles.contactInfoContent}>
+                  <Text
+                    style={[
+                      styles.contactInfoLabel,
+                      isDarkMode && styles.darkContactInfoLabel,
+                    ]}
+                  >
+                    {item.label}
+                  </Text>
+                  <Text
+                    style={[
+                      styles.contactInfoValue,
+                      isDarkMode && styles.darkContactInfoValue,
+                    ]}
+                  >
+                    {item.displayValue || item.value}
+                  </Text>
+                </View>
+              </TouchableOpacity>
+            ))}
+          </View>
+
+          <TouchableOpacity
+            style={styles.deleteButton}
+            onPress={handleDeleteContact}
+            activeOpacity={0.7}
+          >
+            <Text style={styles.deleteButtonText}>🗑️ Delete Contact</Text>
+          </TouchableOpacity>
+        </View>
+      </ScrollView>
+    </SafeAreaView>
+  );
+};
+
+export default ContactDetailScreen;
