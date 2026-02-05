@@ -217,9 +217,74 @@ const ProfileScreen = ({
               <Text style={styles.errorText}>{errors.email}</Text>
             )}
           </View>
+          {/* Optional Fields */}
+          <View style={styles.inputContainer}>
+            <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+              <Text
+                style={[styles.inputLabel, isDarkMode && styles.darkInputLabel]}
+              >
+                LinkedIn Profile
+              </Text>
+              <Text
+                style={[
+                  styles.optionalIndicator,
+                  isDarkMode && styles.darkOptionalIndicator,
+                ]}
+              >
+                {' '}
+                (optional)
+              </Text>
+            </View>
+            <TextInput
+              style={[styles.input, isDarkMode && styles.darkInput]}
+              placeholder="https://linkedin.com/in/yourprofile"
+              placeholderTextColor={isDarkMode ? '#9CA3AF' : '#6B7280'}
+              value={localLinkedin}
+              onChangeText={setLocalLinkedin}
+              keyboardType="url"
+              textContentType="URL"
+              autoCorrect={false}
+              autoCapitalize="none"
+              returnKeyType="next"
+            />
+          </View>
 
+          <View style={styles.inputContainer}>
+            <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+              <Text
+                style={[styles.inputLabel, isDarkMode && styles.darkInputLabel]}
+              >
+                Instagram Handle
+              </Text>
+              <Text
+                style={[
+                  styles.optionalIndicator,
+                  isDarkMode && styles.darkOptionalIndicator,
+                ]}
+              >
+                {' '}
+                (optional)
+              </Text>
+            </View>
+            <TextInput
+              style={[styles.input, isDarkMode && styles.darkInput]}
+              placeholder="@yourusername"
+              placeholderTextColor={isDarkMode ? '#9CA3AF' : '#6B7280'}
+              value={localInstagram}
+              onChangeText={setLocalInstagram}
+              autoCorrect={false}
+              autoCapitalize="none"
+              returnKeyType="next"
+            />
+          </View>
+
+          <TouchableOpacity style={styles.saveButton} onPress={handleSave}>
+            <Text style={styles.saveButtonText}>Save Profile</Text>
+          </TouchableOpacity>
         </View>
-        </ScrollView>
-      </SafeAreaView>
-    )
-}
+      </ScrollView>
+    </SafeAreaView>
+  );
+};
+
+export default ProfileScreen;
