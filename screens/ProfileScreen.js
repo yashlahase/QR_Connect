@@ -182,6 +182,42 @@ const ProfileScreen = ({
               <Text style={styles.errorText}>{errors.phone}</Text>
             )}
           </View>
+
+                    <View style={styles.inputContainer}>
+            <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+              <Text
+                style={[styles.inputLabel, isDarkMode && styles.darkInputLabel]}
+              >
+                Email Address
+              </Text>
+              <Text style={styles.requiredIndicator}> *</Text>
+            </View>
+            <TextInput
+              style={[
+                styles.input,
+                isDarkMode && styles.darkInput,
+                errors.email && styles.inputError,
+              ]}
+              placeholder="Enter your email address"
+              placeholderTextColor={isDarkMode ? '#9CA3AF' : '#6B7280'}
+              value={localEmail}
+              onChangeText={(text) => {
+                setLocalEmail(text);
+                if (errors.email) {
+                  setErrors((prev) => ({ ...prev, email: null }));
+                }
+              }}
+              keyboardType="email-address"
+              textContentType="emailAddress"
+              autoCorrect={false}
+              autoCapitalize="none"
+              returnKeyType="next"
+            />
+            {errors.email && (
+              <Text style={styles.errorText}>{errors.email}</Text>
+            )}
+          </View>
+
         </View>
         </ScrollView>
       </SafeAreaView>
