@@ -61,4 +61,25 @@ const ProfileScreen = ({
     return true;
   };
 
+    const validateFields = () => {
+    const newErrors = {};
+
+    if (!localName.trim()) {
+      newErrors.name = 'Full name is required';
+    }
+
+    if (!localPhone.trim()) {
+      newErrors.phone = 'Phone number is required';
+    } else if (!isValidPhone(localPhone)) {
+      newErrors.phone = 'Please enter a valid phone number';
+    }
+
+    if (!localEmail.trim()) {
+      newErrors.email = 'Email address is required';
+    } else if (!isValidEmail(localEmail)) {
+      newErrors.email = 'Please enter a valid email address';
+    }
+
+    return newErrors;
+  };
 }
