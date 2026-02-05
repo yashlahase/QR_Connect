@@ -82,4 +82,26 @@ const ProfileScreen = ({
 
     return newErrors;
   };
+
+
+    const handleSave = () => {
+    const validationErrors = validateFields();
+    setErrors(validationErrors);
+
+    if (Object.keys(validationErrors).length === 0) {
+      setUserProfile({
+        name: localName.trim(),
+        phone: localPhone.trim(),
+        email: localEmail.trim(),
+        linkedin: localLinkedin.trim(),
+        instagram: localInstagram.trim(),
+      });
+      onProfileCompleted();
+    } else {
+      Alert.alert(
+        'Required Fields Missing',
+        'Please fill in all required fields correctly.'
+      );
+    }
+  };
 }
