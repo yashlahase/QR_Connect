@@ -104,4 +104,53 @@ const ProfileScreen = ({
       );
     }
   };
+
+
+    return (
+    <SafeAreaView style={[styles.container, isDarkMode && styles.darkContainer]}>
+      <ScrollView
+        style={styles.profileContainer}
+        showsVerticalScrollIndicator={false}
+      >
+        <Text style={[styles.screenTitle, isDarkMode && styles.darkText]}>
+          Create Your Profile
+        </Text>
+
+        <View style={styles.formContainer}>
+          {/* Required Fields */}
+          <View style={styles.inputContainer}>
+            <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+              <Text
+                style={[styles.inputLabel, isDarkMode && styles.darkInputLabel]}
+              >
+                Full Name
+              </Text>
+              <Text style={styles.requiredIndicator}> *</Text>
+            </View>
+            <TextInput
+              style={[
+                styles.input,
+                isDarkMode && styles.darkInput,
+                errors.name && styles.inputError,
+              ]}
+              placeholder="Enter your full name"
+              placeholderTextColor={isDarkMode ? '#9CA3AF' : '#6B7280'}
+              value={localName}
+              onChangeText={(text) => {
+                setLocalName(text);
+                if (errors.name) {
+                  setErrors((prev) => ({ ...prev, name: null }));
+                }
+              }}
+              autoCorrect={false}
+              autoCapitalize="words"
+              textContentType="name"
+              returnKeyType="next"
+            />
+            {errors.name && <Text style={styles.errorText}>{errors.name}</Text>}
+          </View>
+        </View>
+        </ScrollView>
+      </SafeAreaView>
+    )
 }
