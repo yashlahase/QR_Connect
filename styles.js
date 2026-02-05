@@ -24,3 +24,92 @@ const colors = {
     border: '#333333',          
   }
 };
+
+export const styles = StyleSheet.create({
+  app: {
+    flex: 1,
+    backgroundColor: '#ffffff',
+  },
+  statusBar: {
+    backgroundColor: 'transparent',
+  },
+  container: {
+    flex: 1,
+    backgroundColor: '#ffffff',
+  },
+  darkContainer: {
+    backgroundColor: colors.dark.background,
+  },
+  keyboardAvoid: {
+    flex: 1,
+  },
+  scrollContent: {
+    flexGrow: 1,
+    paddingBottom: 50,
+  },
+
+  // Welcome Screen Styles
+  welcomeContainer: {
+    flex: 1,
+    justifyContent: 'space-between',
+    paddingHorizontal: 30,
+    paddingVertical: 60,
+  },
+  logoContainer: {
+    alignItems: 'center',
+    marginTop: 80,
+  },
+  qrIcon: {
+    width: 80,
+    height: 80,
+    backgroundColor: '#3B82F6',
+    borderRadius: 20,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: 20,
+  },
+  qrIconText: {
+    color: 'white',
+    fontSize: 24,
+    fontWeight: 'bold',
+  },
+  appName: {
+    fontSize: 32,
+    fontWeight: 'bold',
+    color: '#1F2937',
+    marginBottom: 10,
+  },
+  tagline: {
+    fontSize: 16,
+    color: '#6B7280',
+    textAlign: 'center',
+  },
+  buttonContainer: {
+    gap: 15,
+  },
+  authButton: {
+    height: 50,
+    borderRadius: 25,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: 10,
+  },
+  emailButton: {
+    backgroundColor: '#3B82F6',
+  },
+  googleButton: {
+    backgroundColor: '#EF4444',
+  },
+  appleButton: {
+    backgroundColor: '#000000',
+  },
+  authButtonText: {
+    color: 'white',
+    fontSize: 16,
+    fontWeight: '600',
+  },
+  appleButtonText: {
+    color: 'white',
+  },
+
+})
