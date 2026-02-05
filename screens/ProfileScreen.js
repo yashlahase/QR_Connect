@@ -149,6 +149,39 @@ const ProfileScreen = ({
             />
             {errors.name && <Text style={styles.errorText}>{errors.name}</Text>}
           </View>
+                    <View style={styles.inputContainer}>
+            <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+              <Text
+                style={[styles.inputLabel, isDarkMode && styles.darkInputLabel]}
+              >
+                Phone Number
+              </Text>
+              <Text style={styles.requiredIndicator}> *</Text>
+            </View>
+            <TextInput
+              style={[
+                styles.input,
+                isDarkMode && styles.darkInput,
+                errors.phone && styles.inputError,
+              ]}
+              placeholder="Enter your phone number"
+              placeholderTextColor={isDarkMode ? '#9CA3AF' : '#6B7280'}
+              value={localPhone}
+              onChangeText={(text) => {
+                setLocalPhone(text);
+                if (errors.phone) {
+                  setErrors((prev) => ({ ...prev, phone: null }));
+                }
+              }}
+              keyboardType="phone-pad"
+              textContentType="telephoneNumber"
+              autoCorrect={false}
+              returnKeyType="next"
+            />
+            {errors.phone && (
+              <Text style={styles.errorText}>{errors.phone}</Text>
+            )}
+          </View>
         </View>
         </ScrollView>
       </SafeAreaView>
