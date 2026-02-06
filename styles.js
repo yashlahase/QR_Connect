@@ -112,4 +112,54 @@ export const styles = StyleSheet.create({
     color: 'white',
   },
 
+  // Profile Screen Styles
+  profileContainer: {
+    flex: 1,
+    paddingHorizontal: 20,
+  },
+  screenTitle: {
+    fontSize: 28,
+      fontWeight: 'bold',
+      color: '#1F2937',
+      textAlign: 'center',
+      marginVertical: 30,
+    },
+    darkText: {
+      color: colors.dark.text,
+    },
+    darkSubtext: {
+      color: colors.dark.textSecondary,
+    },
+    formContainer: {
+      gap: 15,
+    },
+    input: {
+      height: 50,
+      borderWidth: 1,
+      borderColor: '#D1D5DB',
+      borderRadius: 10,
+      paddingHorizontal: 15,
+      fontSize: 16,
+      backgroundColor: '#F9FAFB',
+      color: '#1F2937',
+    },
+    darkInput: {
+      backgroundColor: colors.dark.surface,
+      borderColor: colors.dark.border,
+      color: colors.dark.text,
+    },
+    saveButton: {
+      height: 50,
+      backgroundColor: '#3B82F6',
+      borderRadius: 25,
+      justifyContent: 'center',
+      alignItems: 'center',
+      marginTop: 20,
+    },
+    saveButtonText: {
+      color: 'white',
+      fontSize: 16,
+      fontWeight: '600',
+    },
+
 })
