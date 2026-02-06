@@ -9,6 +9,7 @@ import {
   Linking,
   Clipboard,
 } from 'react-native';
+import { getLinkedInUsername } from '../utils/getLinkedInUsername';
 
 const ContactDetailScreen = ({ contact, isDarkMode, onBack, onDeleteContact }) => {
 const copyToClipboard = (text, label) => {
