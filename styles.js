@@ -162,4 +162,65 @@ export const styles = StyleSheet.create({
       fontWeight: '600',
     },
 
+  // My QR Screen Styles
+  qrContainer: {
+    flex: 1,
+    paddingHorizontal: 20,
+    alignItems: 'center',
+  },
+  qrCodeContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  qrCodeWrapper: {
+    padding: 20,
+    backgroundColor: '#FFFFFF',
+    borderRadius: 20,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.1,
+    shadowRadius: 8,
+    elevation: 5,
+    marginBottom: 20,
+  },
+  darkQrWrapper: {
+    backgroundColor: colors.dark.surface,
+    borderWidth: 1,
+    borderColor: colors.dark.border,
+    shadowColor: 'transparent',
+    shadowOpacity: 0,
+    elevation: 0,
+  },
+  qrCodeText: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    color: '#6B7280',
+    marginBottom: 10,
+  },
+  qrCodeSubtext: {
+    fontSize: 14,
+    color: '#9CA3AF',
+  },
+  qrButtonContainer: {
+    flexDirection: 'row',
+    gap: 15,
+    marginBottom: 30,
+  },
+  qrActionButton: {
+    flex: 1,
+    height: 45,
+    backgroundColor: '#3B82F6',
+    borderRadius: 22,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  qrActionButtonText: {
+    color: 'white',
+    fontSize: 14,
+    fontWeight: '600',
+  },    
 })
