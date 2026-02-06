@@ -533,5 +533,145 @@ export const styles = StyleSheet.create({
   },
 
 
+  // Card Styles for Contact Detail Screen
+  contactDetailContainer: {
+    flex: 1,
+    paddingHorizontal: 20,
+  },
+  contactDetailHeader: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingVertical: 20,
+  },
+  backButton: {
+    width: 40,
+    height: 40,
+    borderRadius: 20,
+    backgroundColor: '#F3F4F6',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  darkBackButton: {
+    backgroundColor: colors.dark.surface,
+    borderWidth: 1,
+    borderColor: colors.dark.border,
+  },
+  backButtonText: {
+    fontSize: 24,
+    color: '#1F2937',
+    fontWeight: 'bold',
+  },
+  darkBackButtonText: {
+    color: colors.dark.text,
+  },
+  contactCard: {
+    backgroundColor: '#FFFFFF',
+    borderRadius: 20,
+    padding: 20,
+    marginBottom: 20,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.1,
+    shadowRadius: 8,
+    elevation: 5,
+  },
+  darkContactCard: {
+    backgroundColor: colors.dark.surface,
+    borderWidth: 1,
+    borderColor: colors.dark.border,
+    shadowColor: 'transparent',
+    shadowOpacity: 0,
+    elevation: 0,
+  },
+  contactCardHeader: {
+    alignItems: 'center',
+    paddingVertical: 20,
+    borderBottomWidth: 1,
+    borderBottomColor: '#F3F4F6',
+  },
+  darkContactCardHeader: {
+    borderBottomColor: colors.dark.border,
+  },
+  contactDetailAvatar: {
+    width: 80,
+    height: 80,
+    borderRadius: 40,
+    backgroundColor: '#3B82F6',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: 15,
+  },
+  contactDetailAvatarText: {
+    color: '#FFFFFF',
+    fontSize: 32,
+    fontWeight: 'bold',
+  },
+  contactDetailName: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    color: '#1F2937',
+    marginBottom: 5,
+  },
+  darkContactDetailName: {
+    color: colors.dark.text,
+  },
+  contactDetailRole: {
+    fontSize: 14,
+    color: '#9CA3AF',
+  },
+  darkContactDetailRole: {
+    color: colors.dark.textMuted,
+  },
+  contactInfoSection: {
+    paddingTop: 10,
+  },
+  contactInfoItem: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingVertical: 15,
+    borderBottomWidth: 1,
+    borderBottomColor: '#F3F4F6',
+  },
+  darkContactInfoItem: {
+    borderBottomColor: colors.dark.border,
+  },
+  contactInfoIcon: {
+    width: 40,
+    height: 40,
+    borderRadius: 20,
+    backgroundColor: '#F3F4F6',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginRight: 15,
+  },
+  darkContactInfoIcon: {
+    backgroundColor: colors.dark.background,
+  },
+  contactInfoIconText: {
+    fontSize: 18,
+  },
+  contactInfoContent: {
+    flex: 1,
+  },
+  contactInfoLabel: {
+    fontSize: 12,
+    color: '#9CA3AF',
+    marginBottom: 2,
+  },
+  darkContactInfoLabel: {
+    color: colors.dark.textMuted,
+  },
+  contactInfoValue: {
+    fontSize: 16,
+    color: '#1F2937',
+    fontWeight: '500',
+  },
+  darkContactInfoValue: {
+    color: colors.dark.text,
+  },
+
 
 })
