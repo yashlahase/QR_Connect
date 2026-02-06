@@ -673,5 +673,40 @@ export const styles = StyleSheet.create({
     color: colors.dark.text,
   },
 
+    // Input Container and Labels
+  inputContainer: {
+    marginBottom: 15,
+  },
+  inputLabel: {
+    fontSize: 14,
+    fontWeight: '600',
+    color: '#1F2937',
+    marginBottom: 8,
+  },
+  darkInputLabel: {
+    color: colors.dark.text,
+  },
+  requiredIndicator: {
+    color: '#EF4444',
+    fontSize: 14,
+    fontWeight: 'bold',
+  },
+  optionalIndicator: {
+    fontSize: 12,
+    color: '#9CA3AF',
+  },
+  darkOptionalIndicator: {
+    color: colors.dark.textMuted,
+  },
+  inputError: {
+    borderColor: '#EF4444',
+    borderWidth: 2,
+  },
+  errorText: {
+    color: '#EF4444',
+    fontSize: 12,
+    marginTop: 5,
+  },
+
 
 })
