@@ -393,4 +393,77 @@ export const styles = StyleSheet.create({
     color: '#9CA3AF',
   },
 
+    // Bottom Navigation Styles
+  bottomNav: {
+    flexDirection: 'row',
+    backgroundColor: 'white',
+    borderTopWidth: 1,
+    borderTopColor: '#E5E7EB',
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+  },
+  darkBottomNav: {
+    backgroundColor: colors.dark.surface,
+    borderTopColor: colors.dark.border,
+    shadowColor: 'transparent',
+    shadowOpacity: 0,
+    elevation: 0,
+  },
+  navItem: {
+    flex: 1,
+    alignItems: 'center',
+    paddingVertical: 5,
+  },
+  activeNavItem: {
+    // Active state styling handled by text color
+  },
+  navIcon: {
+    width: 30,
+    height: 30,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: 5,
+  },
+  navIconImage: {
+    width: 24,
+    height: 24,
+    marginBottom: 5,
+    resizeMode: 'contain',
+  },
+  navIconText: {
+    fontSize: 18,
+  },
+  navText: {
+    fontSize: 12,
+    color: '#6B7280',
+    fontWeight: '500',
+  },
+  darkNavText: {
+    color: colors.dark.textMuted,
+  },
+  profileHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: 20,
+  },
+  darkModeToggle: {
+    padding: 10,
+    borderRadius: 20,
+    backgroundColor: '#F3F4F6',
+  },
+  darkModeToggleDark: {
+    backgroundColor: colors.dark.surface,
+    borderColor: colors.dark.border,
+    borderWidth: 1,
+  },
+  darkModeText: {
+    fontSize: 20,
+  },
+  activeNavText: {
+    color: '#3B82F6',
+    fontWeight: '600',
+  },
+
+
 })
