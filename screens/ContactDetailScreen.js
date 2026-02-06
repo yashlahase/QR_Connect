@@ -9,6 +9,7 @@ import {
   Linking,
   Clipboard,
 } from 'react-native';
+import { styles } from '../styles';
 import { getLinkedInUsername } from '../utils/getLinkedInUsername';
 
 const ContactDetailScreen = ({ contact, isDarkMode, onBack, onDeleteContact }) => {
