@@ -5,6 +5,14 @@
 
 ---
 
+## 📥 Download the App
+
+The latest version of QRConnect is available in the GitHub Releases section.
+
+👉 Download the APK from the Releases section and install it on your Android device.
+
+Once installed, you can create your digital visiting card and start sharing your contact details instantly using a QR code.
+
 ## 🎥 Demo Video :-
 https://drive.google.com/file/d/1OT0nmjoLEJ_qOoaIyGXfdwhNFXtNXvYq/view?usp=drivesdk
 
